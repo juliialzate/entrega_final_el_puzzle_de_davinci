@@ -1,0 +1,34 @@
+@startuml
+
+
+class Puzzle {
+    + principal(): void
+}
+
+
+class Cuadro {
+    - image: surface
+    + crear_imagen(imagen): void
+}
+
+class Matricez {
+    - celda: celda
+    + completar_matriz(): void
+    + imprimir_matriz(): void
+}
+
+class Movimiento {
+    - verificar_right: bool
+    - verificar_left: bool
+    - verificar_up: bool
+    - verificar_down: bool
+    + mover_celdas(): void
+}
+
+Puzzle *-- Matricez
+Matricez o-- Cuadro
+Movimiento --|> Cuadro
+
+
+
+@enduml

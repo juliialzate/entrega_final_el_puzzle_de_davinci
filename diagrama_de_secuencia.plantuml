@@ -1,0 +1,14 @@
+@startuml
+
+participant Puzzle
+participant Matrices
+participant Teclas
+
+Puzzle -> Matrices: completar_matriz()
+loop Mientras el juego está en funcionamiento
+    Puzzle -> Matrices: imprimir_matriz()
+    Puzzle -> Teclas: mover_celdas()
+    Teclas -> Matrices: verificar_movimiento()
+end
+
+@enduml

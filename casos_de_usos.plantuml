@@ -1,0 +1,21 @@
+@startuml
+
+left to right direction
+skinparam actorStyle Hollow 
+actor Jugador as User
+usecase "Iniciar juego" as Comenzar
+
+rectangle "Sistema_de_analisis" {
+    
+    usecase "Verificar" as Analizar
+    usecase "Mover" as Resolver
+}
+
+User --> Comenzar
+Comenzar --> Analizar
+Resolver --> Analizar 
+Analizar --> Resolver 
+
+Sistema_de_analisis --> (Solucionar puzzle)
+
+@enduml
